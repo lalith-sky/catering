@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Utensils, HeartHandshake, Sparkles, ChefHat, Leaf, Eye, Maximize2 } from "lucide-react";
 import { BUSINESS_CONFIG } from "@/data/cateringData";
@@ -8,6 +8,16 @@ import { BUSINESS_CONFIG } from "@/data/cateringData";
 export default function AboutSection() {
   const [activeCardSide, setActiveCardSide] = useState<"front" | "back">("front");
   const [showFullModal, setShowFullModal] = useState(false);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && showFullModal) {
+        setShowFullModal(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [showFullModal]);
 
   return (
     <section id="about" className="py-16 lg:py-24 bg-[#FAF7F0] border-b border-[#E8DCC6]">

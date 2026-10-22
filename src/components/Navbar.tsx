@@ -62,7 +62,7 @@ export default function Navbar({ onSelectPackage }: NavbarProps) {
 
           <div className="flex items-center gap-3 sm:gap-4 text-cream-200">
             <a
-              href={`tel:${BUSINESS_CONFIG.whatsAppPhone}`}
+              href={`tel:${BUSINESS_CONFIG.telPhone}`}
               className="flex items-center gap-1 hover:text-gold-300 font-medium transition-colors"
             >
               <Phone className="w-3.5 h-3.5 text-gold-400" />

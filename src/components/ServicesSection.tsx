@@ -13,7 +13,11 @@ import {
 } from "lucide-react";
 import { CATERING_SERVICES } from "@/data/cateringData";
 
-export default function ServicesSection() {
+interface ServicesSectionProps {
+  onSelectService?: (serviceName: string) => void;
+}
+
+export default function ServicesSection({ onSelectService }: ServicesSectionProps) {
   const iconMap: Record<string, React.ReactNode> = {
     HeartHandshake: <HeartHandshake className="w-6 h-6 text-[#14482E]" />,
     Sparkles: <Sparkles className="w-6 h-6 text-[#B88E28]" />,
@@ -24,19 +28,10 @@ export default function ServicesSection() {
   };
 
   const handleBookService = (serviceName: string) => {
-    const enquiry = document.getElementById("booking-enquiry");
-    const eventTypeSelect = document.getElementById("eventType") as HTMLSelectElement | null;
-    if (eventTypeSelect) {
-      if (serviceName.includes("Wedding") || serviceName.includes("Engagement")) {
-        eventTypeSelect.value = "Wedding / Engagement";
-      } else if (serviceName.includes("Birthday")) {
-        eventTypeSelect.value = "Birthday Party";
-      } else if (serviceName.includes("Housewarming")) {
-        eventTypeSelect.value = "Housewarming (Gruhapravesam)";
-      } else {
-        eventTypeSelect.value = "Family Function";
-      }
+    if (onSelectService) {
+      onSelectService(serviceName);
     }
+    const enquiry = document.getElementById("booking-enquiry");
     if (enquiry) {
       enquiry.scrollIntoView({ behavior: "smooth" });
     }

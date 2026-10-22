@@ -143,7 +143,7 @@ export default function ContactSection() {
 
               {/* 3. Call Button */}
               <a
-                href={`tel:${BUSINESS_CONFIG.whatsAppPhone}`}
+                href={`tel:${BUSINESS_CONFIG.telPhone}`}
                 className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-white border border-[#B88E28] text-[#8E6515] hover:bg-gold-50 font-semibold text-sm transition-all"
               >
                 <Phone className="w-4 h-4" />

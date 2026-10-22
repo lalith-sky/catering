@@ -25,6 +25,7 @@ export const BUSINESS_CONFIG = {
   email: "aaswadya18@gmail.com",
   location: "Hyderabad, Telangana, India",
   displayPhone: "+91 94901 22942",
+  telPhone: "+919490122942",
   // Official WhatsApp phone number (India country code 91 + 10 digits):
   whatsAppPhone: "919490122942", 
   serviceAreas: ["Hyderabad", "Secunderabad", "Cyberabad & Greater Hyderabad Region"],

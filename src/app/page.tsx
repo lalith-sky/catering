@@ -15,11 +15,28 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 export default function Home() {
   const [selectedPackageId, setSelectedPackageId] = useState<"basic" | "regular">("regular");
   const [guestCount, setGuestCount] = useState<number>(100);
+  const [selectedEventType, setSelectedEventType] = useState<string>("Wedding / Engagement");
 
   const handleSelectPackage = (packageId: "basic" | "regular", count?: number) => {
     setSelectedPackageId(packageId);
     if (count) {
       setGuestCount(count);
+    }
+  };
+
+  const handleSelectService = (serviceName: string) => {
+    if (serviceName.includes("Wedding") || serviceName.includes("Engagement")) {
+      setSelectedEventType("Wedding / Engagement");
+    } else if (serviceName.includes("Birthday")) {
+      setSelectedEventType("Birthday Party");
+    } else if (serviceName.includes("Housewarming")) {
+      setSelectedEventType("Housewarming (Gruhapravesam)");
+    } else if (serviceName.includes("Corporate")) {
+      setSelectedEventType("Corporate Event");
+    } else if (serviceName.includes("Puja") || serviceName.includes("Religious") || serviceName.includes("Festive")) {
+      setSelectedEventType("Festive / Religious Gathering");
+    } else {
+      setSelectedEventType("Family Function");
     }
   };
 
@@ -35,7 +52,7 @@ export default function Home() {
       <AboutSection />
 
       {/* 4. Catering Services */}
-      <ServicesSection />
+      <ServicesSection onSelectService={handleSelectService} />
 
       {/* 5. Menu Packages (Basic & Regular only) */}
       <MenuPackagesSection onSelectPackage={handleSelectPackage} />
@@ -47,6 +64,7 @@ export default function Home() {
       <BookingEnquiryForm
         selectedPackageId={selectedPackageId}
         initialGuestCount={guestCount}
+        selectedEventType={selectedEventType}
         onPackageChange={setSelectedPackageId}
       />
 

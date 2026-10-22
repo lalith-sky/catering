@@ -23,6 +23,7 @@ interface BookingFormProps {
   selectedPackageId: "basic" | "regular";
   initialGuestCount?: number;
   onPackageChange: (pkgId: "basic" | "regular") => void;
+  selectedEventType?: string;
 }
 
 interface FormData {
@@ -41,12 +42,13 @@ export default function BookingEnquiryForm({
   selectedPackageId,
   initialGuestCount = 100,
   onPackageChange,
+  selectedEventType,
 }: BookingFormProps) {
   const [formData, setFormData] = useState<FormData>({
     customerName: "",
     phoneNumber: "",
     email: "",
-    eventType: "Wedding / Engagement",
+    eventType: selectedEventType || "Wedding / Engagement",
     eventDate: "",
     numberOfGuests: initialGuestCount,
     selectedPackage: selectedPackageId,
@@ -63,8 +65,9 @@ export default function BookingEnquiryForm({
       ...prev,
       selectedPackage: selectedPackageId,
       numberOfGuests: initialGuestCount || prev.numberOfGuests,
+      ...(selectedEventType ? { eventType: selectedEventType } : {}),
     }));
-  }, [selectedPackageId, initialGuestCount]);
+  }, [selectedPackageId, initialGuestCount, selectedEventType]);
 
   const currentPkg =
     MENU_PACKAGES.find((p) => p.id === formData.selectedPackage) || MENU_PACKAGES[0];
