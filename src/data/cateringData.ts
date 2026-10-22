@@ -26,8 +26,11 @@ export const BUSINESS_CONFIG = {
   location: "Hyderabad, Telangana, India",
   displayPhone: "+91 94901 22942",
   telPhone: "+919490122942",
+  // Secondary phone number for calls only:
+  displayPhoneSecondary: "+91 94401 10455",
+  telPhoneSecondary: "+919440110455",
   // Official WhatsApp phone number (India country code 91 + 10 digits):
-  whatsAppPhone: "919490122942", 
+  whatsAppPhone: "919490122942",
   serviceAreas: ["Hyderabad", "Secunderabad", "Cyberabad & Greater Hyderabad Region"],
   dietary: "100% Pure Vegetarian & Fresh Ingredients",
 };

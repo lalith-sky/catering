@@ -95,20 +95,44 @@ export default function ContactSection() {
                   </div>
                 </div>
 
-                {/* Phone / WhatsApp */}
+                {/* Primary Phone / WhatsApp */}
                 <div className="flex items-start gap-3.5">
                   <div className="w-9 h-9 rounded-xl bg-cream-100 border border-cream-300 flex items-center justify-center shrink-0 text-[#14482E]">
                     <Phone className="w-4 h-4 text-[#14482E]" />
                   </div>
                   <div>
                     <span className="text-xs font-bold uppercase tracking-wider text-gray-500 block">
-                      Phone & WhatsApp
+                      Primary Phone & WhatsApp
                     </span>
-                    <span className="font-semibold text-gray-900 font-mono">
+                    <a
+                      href={`tel:${BUSINESS_CONFIG.telPhone}`}
+                      className="font-semibold text-gray-900 font-mono hover:text-[#14482E] transition-colors"
+                    >
                       {BUSINESS_CONFIG.displayPhone}
-                    </span>
+                    </a>
                     <span className="block text-[11px] text-emerald-800 font-medium mt-0.5">
                       Direct Catering Desk & WhatsApp Orders
+                    </span>
+                  </div>
+                </div>
+
+                {/* Secondary Phone (Calls Only) */}
+                <div className="flex items-start gap-3.5">
+                  <div className="w-9 h-9 rounded-xl bg-cream-100 border border-cream-300 flex items-center justify-center shrink-0 text-[#B88E28]">
+                    <Phone className="w-4 h-4 text-[#B88E28]" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-bold uppercase tracking-wider text-gray-500 block">
+                      Additional Phone (Calls Only)
+                    </span>
+                    <a
+                      href={`tel:${BUSINESS_CONFIG.telPhoneSecondary}`}
+                      className="font-semibold text-gray-900 font-mono hover:text-[#8E6515] transition-colors"
+                    >
+                      {BUSINESS_CONFIG.displayPhoneSecondary}
+                    </a>
+                    <span className="block text-[11px] text-[#8E6515] font-medium mt-0.5">
+                      Direct Phone Inquiries & Catering Consultation
                     </span>
                   </div>
                 </div>
@@ -121,7 +145,7 @@ export default function ContactSection() {
                 Direct Contact Channels
               </span>
 
-              {/* 1. WhatsApp Button */}
+              {/* 1. WhatsApp Button - Connected only to +91 94901 22942 */}
               <a
                 href={whatsAppDirectUrl}
                 target="_blank"
@@ -141,13 +165,22 @@ export default function ContactSection() {
                 <span>Send Email</span>
               </a>
 
-              {/* 3. Call Button */}
+              {/* 3. Call Primary Number (+91 94901 22942) */}
               <a
                 href={`tel:${BUSINESS_CONFIG.telPhone}`}
                 className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-white border border-[#B88E28] text-[#8E6515] hover:bg-gold-50 font-semibold text-sm transition-all"
               >
                 <Phone className="w-4 h-4" />
-                <span>Call Catering Desk</span>
+                <span>Call: {BUSINESS_CONFIG.displayPhone}</span>
+              </a>
+
+              {/* 4. Call Secondary Number (+91 94401 10455 - Calls Only) */}
+              <a
+                href={`tel:${BUSINESS_CONFIG.telPhoneSecondary}`}
+                className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-white border border-[#14482E] text-[#14482E] hover:bg-cream-200 font-semibold text-sm transition-all"
+              >
+                <Phone className="w-4 h-4" />
+                <span>Call: {BUSINESS_CONFIG.displayPhoneSecondary} (Calls Only)</span>
               </a>
 
               <div className="pt-2 text-center">

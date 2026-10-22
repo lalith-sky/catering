@@ -95,9 +95,28 @@ export default function Footer() {
                   {BUSINESS_CONFIG.email}
                 </a>
               </div>
-              <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-gold-400 shrink-0" />
-                <span className="font-mono">{BUSINESS_CONFIG.displayPhone}</span>
+              <div className="flex items-start gap-2.5">
+                <Phone className="w-4 h-4 text-gold-400 shrink-0 mt-0.5" />
+                <div className="flex flex-col gap-1 font-mono text-xs">
+                  <a
+                    href={`tel:${BUSINESS_CONFIG.telPhone}`}
+                    className="hover:text-gold-300 transition-colors"
+                  >
+                    {BUSINESS_CONFIG.displayPhone}{" "}
+                    <span className="text-[11px] text-cream-300/70 font-sans">
+                      (Calls & WhatsApp)
+                    </span>
+                  </a>
+                  <a
+                    href={`tel:${BUSINESS_CONFIG.telPhoneSecondary}`}
+                    className="hover:text-gold-300 transition-colors"
+                  >
+                    {BUSINESS_CONFIG.displayPhoneSecondary}{" "}
+                    <span className="text-[11px] text-cream-300/70 font-sans">
+                      (Calls Only)
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
 

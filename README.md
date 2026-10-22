@@ -8,6 +8,7 @@ Authentic pure vegetarian catering website for **AASWADYA Caterers**, based in H
 - **Sub-tagline:** Serving Happiness to Every Plate
 - **Location:** Hyderabad, Telangana, India
 - **Phone & WhatsApp:** +91 94901 22942
+- **Additional Phone (Calls Only):** +91 94401 10455
 - **Email:** aaswadya18@gmail.com
 - **Dietary:** 100% Pure Vegetarian & Fresh Ingredients
 
