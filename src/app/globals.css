@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-leaf-deep: #0D3522;
+    --color-leaf-rich: #14482E;
+    --color-gold: #B88E28;
+    --color-gold-light: #D4AF37;
+    --color-cream: #FCFAF6;
+    --color-cream-card: #F8F3EA;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    background-color: #FAF7F0;
+    color: #1A2821;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #14482E;
+    color: #FAF7F0;
+  }
+}
+
+/* Subtle decorative grain and luxury Indian card styling */
+.traditional-border {
+  border-image: linear-gradient(to right, #B88E28, #E9D9A6, #B88E28) 1;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #A87A1E 0%, #D4AF37 50%, #8E6515 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.leaf-gradient-text {
+  background: linear-gradient(135deg, #174C32 0%, #0D3522 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F0EADB;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1C5E3D;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0D3522;
+}
