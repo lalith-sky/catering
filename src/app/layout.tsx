@@ -23,6 +23,9 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000"
+  ),
   title: "AASWADYA Caterers Hyderabad | Tradition Meets Taste | Pure Veg Catering",
   description:
     "AASWADYA Caterers provides authentic, high-quality vegetarian catering services in Hyderabad & Telangana. Specialising in weddings, engagements, family functions, and celebrations with authentic flavours and disciplined service.",
