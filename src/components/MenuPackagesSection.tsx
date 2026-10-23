@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Users,
   ArrowRight,
@@ -377,8 +378,34 @@ export default function MenuPackagesSection({ onSelectPackage }: MenuPackagesSec
           </div>
         </div>
 
+        {/* Customise Your Plate Callout Banner */}
+        <div className="mt-12 rounded-3xl bg-gradient-to-r from-[#0D3522] via-[#14482E] to-[#0A2618] p-6 sm:p-8 text-white shadow-xl border-2 border-[#B88E28]/40">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="space-y-1.5 text-center md:text-left">
+              <span className="text-[11px] font-bold uppercase tracking-widest text-gold-300 flex items-center justify-center md:justify-start gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
+                <span>Total Culinary Freedom • Min 50 Guests</span>
+              </span>
+              <h4 className="font-serif text-2xl sm:text-3xl font-bold text-white">
+                Want to Handpick Every Single Dish?
+              </h4>
+              <p className="text-xs sm:text-sm text-cream-200 max-w-2xl">
+                Use our interactive <strong>Customise Your Plate</strong> builder to choose from 40+ authentic Telugu curries, biryanis, sweets, fries, breads, and live counters with instant quote calculation.
+              </p>
+            </div>
+
+            <Link
+              href="/customise-plate"
+              className="shrink-0 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-[#B88E28] to-[#9C731C] hover:from-[#CBA745] hover:to-[#B88E28] text-white font-bold text-xs sm:text-sm shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center gap-2"
+            >
+              <span>Build Custom Plate</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+
         {/* Sweets & Feast Showcase Card at bottom (Clean Presentation) */}
-        <div className="mt-14 rounded-2xl bg-white p-6 sm:p-8 border border-[#E3D4BC] shadow-md">
+        <div className="mt-8 rounded-2xl bg-white p-6 sm:p-8 border border-[#E3D4BC] shadow-md">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
             <div className="md:col-span-4 relative aspect-[4/3] rounded-xl overflow-hidden border border-cream-300 shadow-sm">
               <Image

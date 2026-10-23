@@ -29,18 +29,25 @@ export default function Navbar({ onSelectPackage }: NavbarProps) {
   const navLinks = [
     { name: "About Us", href: "#about" },
     { name: "Occasions", href: "#celebrations" },
-    { name: "Catering Services", href: "#services" },
     { name: "Menu Packages", href: "#menus" },
+    { name: "Customise Plate", href: "/customise-plate", isHighlight: true },
+    { name: "Catering Services", href: "#services" },
     { name: "Why Choose Us", href: "#why-choose-us" },
     { name: "Contact & Enquiry", href: "#booking-enquiry" },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
     setMobileMenuOpen(false);
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      if (typeof window !== "undefined" && window.location.pathname !== "/") {
+        window.location.href = `/${href}`;
+        return;
+      }
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
@@ -120,9 +127,18 @@ export default function Navbar({ onSelectPackage }: NavbarProps) {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="text-sm font-medium text-[#1A3326] hover:text-[#B88E28] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#B88E28] hover:after:w-full after:transition-all"
+                className={`text-sm font-medium transition-colors relative py-1 flex items-center gap-1.5 ${
+                  link.isHighlight
+                    ? "text-[#8E6515] font-bold"
+                    : "text-[#1A3326] hover:text-[#B88E28]"
+                } after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#B88E28] hover:after:w-full after:transition-all`}
               >
-                {link.name}
+                <span>{link.name}</span>
+                {link.isHighlight && (
+                  <span className="text-[9px] font-extrabold uppercase tracking-wider bg-gradient-to-r from-[#B88E28] to-[#9C731C] text-white px-1.5 py-0.5 rounded-full shadow-xs">
+                    Build
+                  </span>
+                )}
               </a>
             ))}
           </nav>
