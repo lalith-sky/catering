@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, Phone, ArrowUp, Heart } from "lucide-react";
-import { BUSINESS_CONFIG } from "@/data/cateringData";
+import { BUSINESS_CONFIG, MENU_PACKAGES } from "@/data/cateringData";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -55,12 +55,12 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#menus" className="hover:text-gold-300 transition-colors">
-                  Basic Veg Menu (₹229)
+                  Basic Veg Menu (₹{MENU_PACKAGES[0].pricePerPlate})
                 </a>
               </li>
               <li>
                 <a href="#menus" className="hover:text-gold-300 transition-colors">
-                  Regular Veg Menu (₹299)
+                  Regular Veg Menu (₹{MENU_PACKAGES[1].pricePerPlate})
                 </a>
               </li>
               <li>

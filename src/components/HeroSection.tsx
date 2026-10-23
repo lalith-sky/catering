@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { Utensils, CalendarCheck, ShieldCheck, Sparkles, MapPin, CheckCircle2 } from "lucide-react";
+import { MENU_PACKAGES } from "@/data/cateringData";
 
 export default function HeroSection() {
   const scrollToSection = (id: string) => {
@@ -81,7 +82,7 @@ export default function HeroSection() {
               </div>
               <div className="flex items-center gap-2 col-span-2 sm:col-span-1">
                 <CheckCircle2 className="w-4 h-4 text-[#14482E] shrink-0" />
-                <span className="font-medium">From ₹229 / Plate</span>
+                <span className="font-medium">From ₹{MENU_PACKAGES[0].pricePerPlate} / Plate</span>
               </div>
             </div>
           </div>

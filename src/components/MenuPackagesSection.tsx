@@ -46,7 +46,7 @@ export default function MenuPackagesSection({ onSelectPackage }: MenuPackagesSec
           <p className="text-base sm:text-lg text-[#32453B] leading-relaxed">
             Choose between our two structured packages: the classic{" "}
             <strong>Basic Veg Menu</strong> for focused traditional feasts, or the grand{" "}
-            <strong>Regular Veg Menu</strong> with additional courses, double sweets, and rotis.
+            <strong>Regular Veg Menu</strong> with additional courses, both curries, rotis, and fresh salad.
           </p>
         </div>
 
@@ -77,7 +77,7 @@ export default function MenuPackagesSection({ onSelectPackage }: MenuPackagesSec
                 <div>
                   <span className="text-xs font-medium text-gray-500 block">Price Per Plate</span>
                   <div className="flex items-baseline gap-1">
-                    <span className="font-serif text-4xl font-extrabold text-[#0D3522]">₹229</span>
+                    <span className="font-serif text-4xl font-extrabold text-[#0D3522]">₹{MENU_PACKAGES[0].pricePerPlate}</span>
                     <span className="text-sm font-medium text-gray-600">/ plate</span>
                   </div>
                 </div>
@@ -133,7 +133,7 @@ export default function MenuPackagesSection({ onSelectPackage }: MenuPackagesSec
                 <div className="pt-2 border-t border-[#E2D5BC] flex items-center justify-between">
                   <span className="text-xs text-gray-600 font-medium">Indicative Total:</span>
                   <span className="font-serif text-lg font-bold text-[#14482E]">
-                    ₹{(229 * basicGuests).toLocaleString("en-IN")}
+                    ₹{(MENU_PACKAGES[0].pricePerPlate * basicGuests).toLocaleString("en-IN")}
                   </span>
                 </div>
                 <p className="text-[10px] text-gray-500 mt-1 italic">
@@ -220,13 +220,13 @@ export default function MenuPackagesSection({ onSelectPackage }: MenuPackagesSec
                 <div>
                   <span className="text-xs font-medium text-gray-500 block">Price Per Plate</span>
                   <div className="flex items-baseline gap-1">
-                    <span className="font-serif text-4xl font-extrabold text-[#7A5618]">₹299</span>
+                    <span className="font-serif text-4xl font-extrabold text-[#7A5618]">₹{MENU_PACKAGES[1].pricePerPlate}</span>
                     <span className="text-sm font-medium text-gray-600">/ plate</span>
                   </div>
                 </div>
                 <div className="text-right">
                   <span className="text-[11px] font-bold text-[#7A5618] bg-gold-200/90 px-2.5 py-1 rounded-full border border-gold-400/50">
-                    2 Sweets • Both Curries • Roti
+                    1 Sweet • Both Curries • Roti
                   </span>
                 </div>
               </div>
@@ -276,7 +276,7 @@ export default function MenuPackagesSection({ onSelectPackage }: MenuPackagesSec
                 <div className="pt-2 border-t border-[#E2D5BC] flex items-center justify-between">
                   <span className="text-xs text-gray-600 font-medium">Indicative Total:</span>
                   <span className="font-serif text-lg font-bold text-[#7A5618]">
-                    ₹{(299 * regularGuests).toLocaleString("en-IN")}
+                    ₹{(MENU_PACKAGES[1].pricePerPlate * regularGuests).toLocaleString("en-IN")}
                   </span>
                 </div>
                 <p className="text-[10px] text-gray-500 mt-1 italic">
@@ -295,7 +295,7 @@ export default function MenuPackagesSection({ onSelectPackage }: MenuPackagesSec
                     <div
                       key={sec.category}
                       className={`py-2.5 px-3.5 rounded-xl border flex items-center justify-between gap-2 transition-colors ${
-                        sec.badge === "Regular Extra" || sec.badge === "2 Sweets Included"
+                        sec.badge === "Regular Extra"
                           ? "bg-gold-50/70 border-gold-300 font-medium hover:bg-gold-100/60"
                           : "bg-cream-50/80 border-cream-200 hover:bg-cream-100/60"
                       }`}
@@ -374,7 +374,7 @@ export default function MenuPackagesSection({ onSelectPackage }: MenuPackagesSec
                   Basic Package: 1 Sweet Included
                 </span>
                 <span className="px-3 py-1 rounded-full bg-gold-100 text-[#7A5618] font-bold border border-gold-300">
-                  Regular Package: 2 Sweets Included
+                  Regular Package: 1 Sweet Included
                 </span>
               </div>
             </div>

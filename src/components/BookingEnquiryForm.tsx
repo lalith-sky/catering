@@ -128,7 +128,10 @@ export default function BookingEnquiryForm({
 
   // Build clean WhatsApp message URL
   const buildWhatsAppUrl = () => {
-    const pkgName = formData.selectedPackage === "basic" ? "Basic Veg Menu (₹229/plate)" : "Regular Veg Menu (₹299/plate)";
+    const pkgName =
+      formData.selectedPackage === "basic"
+        ? `Basic Veg Menu (₹${MENU_PACKAGES[0].pricePerPlate}/plate)`
+        : `Regular Veg Menu (₹${MENU_PACKAGES[1].pricePerPlate}/plate)`;
     const message = `Hello AASWADYA Caterers! I would like to enquire about vegetarian catering for my upcoming event.
 
 📋 *Booking Details:*
@@ -256,8 +259,8 @@ Please share the detailed quote and availability. Thank you!`;
                   </div>
                   <span className="text-xs text-gray-600 block mt-1">
                     {formData.selectedPackage === "basic"
-                      ? "1 Sweet • 1 Curry Category Choice"
-                      : "2 Sweets • Both Wet & Veg Curries • Roti & Salad"}
+                      ? "1 Sweet • 1 Curry Category Choice • Pickle Included"
+                      : "1 Sweet • Both Wet & Veg Curries • Roti & Salad"}
                   </span>
                 </div>
 
@@ -451,8 +454,8 @@ Please share the detailed quote and availability. Thank you!`;
                     }}
                     className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#D8C7A9] text-sm text-[#0D3522] font-semibold focus:outline-none focus:ring-2 focus:ring-[#14482E] transition-all"
                   >
-                    <option value="basic">BASIC VEG MENU — ₹229 / plate (1 Sweet, 1 Curry Choice)</option>
-                    <option value="regular">REGULAR VEG MENU — ₹299 / plate (2 Sweets, 2 Curries, Roti, Salad)</option>
+                    <option value="basic">BASIC VEG MENU — ₹{MENU_PACKAGES[0].pricePerPlate} / plate (1 Sweet, 1 Curry Choice, Pickle)</option>
+                    <option value="regular">REGULAR VEG MENU — ₹{MENU_PACKAGES[1].pricePerPlate} / plate (1 Sweet, 2 Curries, Roti, Salad)</option>
                   </select>
                 </div>
 

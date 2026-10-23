@@ -40,7 +40,7 @@ export const MENU_PACKAGES: MenuPackage[] = [
     id: "basic",
     name: "Basic Veg Menu",
     subtitle: "Essential Traditional Feast",
-    pricePerPlate: 229,
+    pricePerPlate: 250,
     highlightBadge: "Popular for Family Functions",
     tagline: "Authentic, freshly prepared South Indian festive meal with classic favourites.",
     sweetCount: "1 Sweet",
@@ -84,6 +84,9 @@ export const MENU_PACKAGES: MenuPackage[] = [
         category: "Chutney",
       },
       {
+        category: "Pickle",
+      },
+      {
         category: "Papad",
       },
       {
@@ -101,15 +104,15 @@ export const MENU_PACKAGES: MenuPackage[] = [
     id: "regular",
     name: "Regular Veg Menu",
     subtitle: "Complete Grand Celebration",
-    pricePerPlate: 299,
+    pricePerPlate: 310,
     highlightBadge: "Most Recommended",
-    tagline: "Expanded celebratory feast with two sweets, two distinct curries, rotis, and accompaniments.",
-    sweetCount: "2 Sweets",
+    tagline: "Expanded celebratory feast with authentic sweets, two distinct curries, rotis, and accompaniments.",
+    sweetCount: "1 Sweet",
     curryRule: "2 Curries (Wet Curry AND Vegetable Curry)",
     includesRoti: true,
     includesSaladPickle: true,
     keyDifferentiators: [
-      "2 Sweets included",
+      "1 Sweet included",
       "Both Wet Curry AND Vegetable Curry included",
       "Roti / Chapati included",
       "Fresh Salad & Pickles included",
@@ -117,8 +120,8 @@ export const MENU_PACKAGES: MenuPackage[] = [
     ],
     sections: [
       {
-        category: "Sweets",
-        badge: "2 Sweets Included",
+        category: "Sweet",
+        badge: "1 Sweet",
       },
       {
         category: "Flavoured Rice",
@@ -151,7 +154,6 @@ export const MENU_PACKAGES: MenuPackage[] = [
       },
       {
         category: "Pickle",
-        badge: "Regular Extra",
       },
       {
         category: "Salad",

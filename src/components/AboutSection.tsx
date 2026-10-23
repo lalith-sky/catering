@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Utensils, HeartHandshake, Sparkles, ChefHat, Leaf, Eye, Maximize2 } from "lucide-react";
-import { BUSINESS_CONFIG } from "@/data/cateringData";
+import { BUSINESS_CONFIG, MENU_PACKAGES } from "@/data/cateringData";
 
 export default function AboutSection() {
   const [activeCardSide, setActiveCardSide] = useState<"front" | "back">("front");
@@ -98,7 +98,7 @@ export default function AboutSection() {
                     Transparent Per-Plate Pricing
                   </span>
                   <span className="text-sm font-medium text-cream-100">
-                    Packages designed for every celebration — Basic at ₹229 & Regular at ₹299
+                    Packages designed for every celebration — Basic at ₹{MENU_PACKAGES[0].pricePerPlate} & Regular at ₹{MENU_PACKAGES[1].pricePerPlate}
                   </span>
                 </div>
                 <a

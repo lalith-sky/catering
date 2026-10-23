@@ -13,8 +13,8 @@ Authentic pure vegetarian catering website for **AASWADYA Caterers**, based in H
 - **Dietary:** 100% Pure Vegetarian & Fresh Ingredients
 
 ## 🍽️ Initial Menu Packages
-- **Basic Veg Menu (₹229 / plate):** Focused traditional feast with 1 sweet, flavoured rice, customer choice of 1 curry category (Wet OR Veg curry), white rice, fry, dal, sambar, rasam, snacks, chutney, papad, curd, pure ghee, and mouth freshener.
-- **Regular Veg Menu (₹299 / plate):** Grand celebration feast with 2 sweets, flavoured rice, both Wet and Vegetable curries, rotis, fresh salad, pickles, snacks, and all traditional accompaniments.
+- **Basic Veg Menu (₹250 / plate):** Focused traditional feast with 1 sweet, flavoured rice, customer choice of 1 curry category (Wet OR Veg curry), white rice, fry, dal, sambar, rasam, snacks, chutney, pickle, papad, curd, pure ghee, and mouth freshener.
+- **Regular Veg Menu (₹310 / plate):** Grand celebration feast with 1 sweet, flavoured rice, both Wet and Vegetable curries, rotis, fresh salad, pickles, snacks, and all traditional accompaniments.
 
 ## 🚀 Key Features
 - **Interactive Guest Count & Indicative Cost Calculator** with presets (50, 100, 200, 300, 500 guests).
