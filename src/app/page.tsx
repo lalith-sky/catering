@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import OccasionsSection, { OccasionItem } from "@/components/OccasionsSection";
 import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
 import MenuPackagesSection from "@/components/MenuPackagesSection";
@@ -21,6 +22,13 @@ export default function Home() {
     setSelectedPackageId(packageId);
     if (count) {
       setGuestCount(count);
+    }
+  };
+
+  const handleSelectOccasion = (occasion: OccasionItem) => {
+    setSelectedEventType(occasion.formEventType);
+    if (occasion.recommendedPackage) {
+      setSelectedPackageId(occasion.recommendedPackage);
     }
   };
 
@@ -48,7 +56,13 @@ export default function Home() {
       {/* 2. Hero Section */}
       <HeroSection />
 
-      {/* 3. About Us Section & Visiting Card Showcase */}
+      {/* 3. What Are You Celebrating? (Tailored Experiences) */}
+      <OccasionsSection
+        selectedEventType={selectedEventType}
+        onSelectOccasion={handleSelectOccasion}
+      />
+
+      {/* 4. About Us Section & Visiting Card Showcase */}
       <AboutSection />
 
       {/* 4. Catering Services */}

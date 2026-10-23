@@ -28,6 +28,7 @@ export default function Navbar({ onSelectPackage }: NavbarProps) {
 
   const navLinks = [
     { name: "About Us", href: "#about" },
+    { name: "Occasions", href: "#celebrations" },
     { name: "Catering Services", href: "#services" },
     { name: "Menu Packages", href: "#menus" },
     { name: "Why Choose Us", href: "#why-choose-us" },

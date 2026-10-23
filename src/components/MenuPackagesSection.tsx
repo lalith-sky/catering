@@ -45,8 +45,8 @@ export default function MenuPackagesSection({ onSelectPackage }: MenuPackagesSec
           <div className="w-20 h-1 bg-gradient-to-r from-[#B88E28] to-[#14482E] mx-auto mb-5 rounded-full"></div>
           <p className="text-base sm:text-lg text-[#32453B] leading-relaxed">
             Choose between our two structured packages: the classic{" "}
-            <strong>Basic Veg Menu</strong> for focused traditional feasts, or the grand{" "}
-            <strong>Regular Veg Menu</strong> with additional courses, both curries, rotis, and fresh salad.
+            <strong>Basic Menu</strong> for focused traditional feasts, or the grand{" "}
+            <strong>Regular Menu</strong> with additional courses, both South & North Indian curries, rotis, and fresh salad.
           </p>
         </div>
 
@@ -71,7 +71,7 @@ export default function MenuPackagesSection({ onSelectPackage }: MenuPackagesSec
               </div>
 
               <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0D3522] mb-1">
-                BASIC VEG MENU
+                BASIC MENU
               </h3>
               <p className="text-xs sm:text-sm text-gray-600 mb-6 min-h-[3.25rem] flex items-center leading-relaxed">
                 {MENU_PACKAGES[0].tagline}
@@ -226,7 +226,7 @@ export default function MenuPackagesSection({ onSelectPackage }: MenuPackagesSec
               </div>
 
               <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0D3522] mb-1">
-                REGULAR VEG MENU
+                REGULAR MENU
               </h3>
               <p className="text-xs sm:text-sm text-gray-600 mb-6 min-h-[3.25rem] flex items-center leading-relaxed">
                 {MENU_PACKAGES[1].tagline}

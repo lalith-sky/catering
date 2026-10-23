@@ -55,12 +55,12 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#menus" className="hover:text-gold-300 transition-colors">
-                  Basic Veg Menu (₹{MENU_PACKAGES[0].pricePerPlate})
+                  Basic Menu (₹{MENU_PACKAGES[0].pricePerPlate})
                 </a>
               </li>
               <li>
                 <a href="#menus" className="hover:text-gold-300 transition-colors">
-                  Regular Veg Menu (₹{MENU_PACKAGES[1].pricePerPlate})
+                  Regular Menu (₹{MENU_PACKAGES[1].pricePerPlate})
                 </a>
               </li>
               <li>

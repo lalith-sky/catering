@@ -38,18 +38,18 @@ export const BUSINESS_CONFIG = {
 export const MENU_PACKAGES: MenuPackage[] = [
   {
     id: "basic",
-    name: "Basic Veg Menu",
+    name: "Basic Menu",
     subtitle: "Essential Traditional Feast",
     pricePerPlate: 250,
     highlightBadge: "Popular for Family Functions",
     tagline: "Authentic, freshly prepared South Indian festive meal with classic favourites.",
     sweetCount: "1 Sweet",
-    curryRule: "1 Curry Category (Wet OR Veg)",
+    curryRule: "1 Curry Choice (South Indian OR North Indian)",
     includesRoti: false,
     includesSaladPickle: false,
     keyDifferentiators: [
       "1 Sweet",
-      "1 Curry category choice (Wet OR Veg)",
+      "1 Curry Choice (South Indian OR North Indian)",
       "Steamed White Rice with Pure Ghee",
       "Traditional snacks, dal, rasam & papad",
     ],
@@ -62,7 +62,7 @@ export const MENU_PACKAGES: MenuPackage[] = [
         category: "Flavoured Rice",
       },
       {
-        category: "Curry (Wet OR Veg Category)",
+        category: "Curry (South Indian OR North Indian)",
         badge: "Choose Any 1",
       },
       {
@@ -102,18 +102,18 @@ export const MENU_PACKAGES: MenuPackage[] = [
   },
   {
     id: "regular",
-    name: "Regular Veg Menu",
+    name: "Regular Menu",
     subtitle: "Complete Grand Celebration",
     pricePerPlate: 310,
     highlightBadge: "Most Recommended",
     tagline: "Expanded celebratory feast with authentic sweets, two distinct curries, rotis, and accompaniments.",
     sweetCount: "1 Sweet",
-    curryRule: "2 Curries (Wet Curry AND Vegetable Curry)",
+    curryRule: "2 Curries (South Indian Curry AND North Indian Curry)",
     includesRoti: true,
     includesSaladPickle: true,
     keyDifferentiators: [
       "1 Sweet included",
-      "Both Wet Curry AND Vegetable Curry included",
+      "Both South Indian Curry AND North Indian Curry included",
       "Roti / Chapati included",
       "Fresh Salad & Pickles included",
       "Flavoured Rice & all traditional accompaniments",
@@ -127,11 +127,11 @@ export const MENU_PACKAGES: MenuPackage[] = [
         category: "Flavoured Rice",
       },
       {
-        category: "Wet Curry",
+        category: "South Indian Curry",
         badge: "Included",
       },
       {
-        category: "Vegetable Curry",
+        category: "North Indian Curry",
         badge: "Included",
       },
       {

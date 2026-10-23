@@ -130,8 +130,8 @@ export default function BookingEnquiryForm({
   const buildWhatsAppUrl = () => {
     const pkgName =
       formData.selectedPackage === "basic"
-        ? `Basic Veg Menu (₹${MENU_PACKAGES[0].pricePerPlate}/plate)`
-        : `Regular Veg Menu (₹${MENU_PACKAGES[1].pricePerPlate}/plate)`;
+        ? `Basic Menu (₹${MENU_PACKAGES[0].pricePerPlate}/plate)`
+        : `Regular Menu (₹${MENU_PACKAGES[1].pricePerPlate}/plate)`;
     const message = `Hello AASWADYA Caterers! I would like to enquire about vegetarian catering for my upcoming event.
 
 📋 *Booking Details:*
@@ -187,7 +187,7 @@ Please share the detailed quote and availability. Thank you!`;
                 <p className="text-sm sm:text-base text-gray-700 max-w-lg mx-auto">
                   Your catering enquiry for the{" "}
                   <strong>
-                    {formData.selectedPackage === "basic" ? "Basic Veg Menu" : "Regular Veg Menu"}
+                    {formData.selectedPackage === "basic" ? "Basic Menu" : "Regular Menu"}
                   </strong>{" "}
                   has been noted successfully.
                 </p>
@@ -262,8 +262,8 @@ Please share the detailed quote and availability. Thank you!`;
                   </div>
                   <span className="text-xs text-gray-600 block mt-1">
                     {formData.selectedPackage === "basic"
-                      ? "1 Sweet • 1 Curry Category Choice • Pickle Included"
-                      : "1 Sweet • Both Wet & Veg Curries • Roti & Salad"}
+                      ? "1 Sweet • 1 Curry Choice (South / North Indian) • Pickle Included"
+                      : "1 Sweet • South & North Indian Curries • Roti & Salad"}
                   </span>
                 </div>
 
@@ -376,11 +376,14 @@ Please share the detailed quote and availability. Thank you!`;
                     className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#D8C7A9] text-sm text-[#0D3522] focus:outline-none focus:ring-2 focus:ring-[#14482E] transition-all"
                   >
                     <option value="Wedding / Engagement">Wedding / Engagement Ceremony</option>
-                    <option value="Family Function">Family Function / Shashtipoorti</option>
+                    <option value="Wedding Reception">Wedding Reception</option>
                     <option value="Birthday Party">Birthday Party & Milestone</option>
-                    <option value="Housewarming (Gruhapravesam)">Housewarming (Gruhapravesam)</option>
-                    <option value="Festive / Religious Gathering">Festive / Religious Pooja</option>
+                    <option value="Anniversary Celebration">Anniversary Celebration</option>
+                    <option value="House Party Celebration">House Party Celebration</option>
                     <option value="Corporate Event">Corporate Lunch / Dinner</option>
+                    <option value="Housewarming (Gruhapravesam)">Housewarming (Gruhapravesam)</option>
+                    <option value="Family Function">Family Function / Shashtipoorti</option>
+                    <option value="Festive / Religious Gathering">Festive / Religious Pooja</option>
                     <option value="Other Celebration">Other Celebration</option>
                   </select>
                 </div>
@@ -462,8 +465,8 @@ Please share the detailed quote and availability. Thank you!`;
                     }}
                     className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#D8C7A9] text-sm text-[#0D3522] font-semibold focus:outline-none focus:ring-2 focus:ring-[#14482E] transition-all"
                   >
-                    <option value="basic">BASIC VEG MENU — ₹{MENU_PACKAGES[0].pricePerPlate} / plate (1 Sweet, 1 Curry Choice, Pickle)</option>
-                    <option value="regular">REGULAR VEG MENU — ₹{MENU_PACKAGES[1].pricePerPlate} / plate (1 Sweet, 2 Curries, Roti, Salad)</option>
+                    <option value="basic">BASIC MENU — ₹{MENU_PACKAGES[0].pricePerPlate} / plate (1 Sweet, 1 Curry Choice, Pickle)</option>
+                    <option value="regular">REGULAR MENU — ₹{MENU_PACKAGES[1].pricePerPlate} / plate (1 Sweet, South & North Indian Curries, Roti, Salad)</option>
                   </select>
                 </div>
 
@@ -510,7 +513,7 @@ Please share the detailed quote and availability. Thank you!`;
                   <textarea
                     id="specialRequests"
                     rows={3}
-                    placeholder="e.g. Specific choice for wet curry or flavoured rice, dietary preferences (mild spice, satvik, jain options), or venue timing."
+                    placeholder="e.g. Specific choice for curries (South Indian / North Indian) or flavoured rice, dietary preferences (mild spice, satvik, jain options), or venue timing."
                     value={formData.specialRequests}
                     onChange={(e) =>
                       setFormData({ ...formData, specialRequests: e.target.value })
