@@ -209,9 +209,12 @@ Please share the detailed quote and availability. Thank you!`;
                 </div>
                 <div className="flex justify-between pt-1">
                   <span className="text-gray-600">Indicative Estimate:</span>
-                  <span className="font-serif font-bold text-base text-[#14482E]">
-                    ₹{estimatedTotal.toLocaleString("en-IN")}
-                  </span>
+                  <div className="flex items-baseline">
+                    <span className="font-sans font-bold text-sm text-[#14482E] mr-0.5">₹</span>
+                    <span className="font-sans font-bold text-base text-[#14482E] tabular-nums">
+                      {estimatedTotal.toLocaleString("en-IN")}
+                    </span>
+                  </div>
                 </div>
               </div>
 
@@ -253,7 +256,7 @@ Please share the detailed quote and availability. Thank you!`;
                     <span className="font-serif text-xl sm:text-2xl font-bold text-[#0D3522]">
                       {currentPkg.name}
                     </span>
-                    <span className="text-sm font-semibold text-[#8E6515] bg-gold-100 px-2.5 py-0.5 rounded-full border border-gold-300">
+                    <span className="text-sm font-bold text-[#8E6515] bg-gold-100 px-2.5 py-0.5 rounded-full border border-gold-300 font-sans tabular-nums">
                       ₹{currentPkg.pricePerPlate}/plate
                     </span>
                   </div>
@@ -268,9 +271,14 @@ Please share the detailed quote and availability. Thank you!`;
                   <span className="text-[11px] font-semibold text-gray-500 block uppercase">
                     Indicative Estimate ({formData.numberOfGuests || 0} guests)
                   </span>
-                  <span className="font-serif text-2xl font-extrabold text-[#14482E]">
-                    ₹{estimatedTotal.toLocaleString("en-IN")}
-                  </span>
+                  <div className="flex items-baseline sm:justify-end">
+                    <span className="font-sans font-bold text-lg text-[#14482E] mr-0.5 leading-none select-none">
+                      ₹
+                    </span>
+                    <span className="font-sans text-2xl font-extrabold tracking-tight text-[#14482E] tabular-nums leading-none">
+                      {estimatedTotal.toLocaleString("en-IN")}
+                    </span>
+                  </div>
                 </div>
               </div>
 

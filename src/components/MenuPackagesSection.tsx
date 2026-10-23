@@ -73,23 +73,28 @@ export default function MenuPackagesSection({ onSelectPackage }: MenuPackagesSec
               <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0D3522] mb-1">
                 BASIC VEG MENU
               </h3>
-              <p className="text-xs sm:text-sm text-gray-600 mb-6 min-h-[2.75rem] flex items-center">
+              <p className="text-xs sm:text-sm text-gray-600 mb-6 min-h-[3.25rem] flex items-center leading-relaxed">
                 {MENU_PACKAGES[0].tagline}
               </p>
 
               {/* Price Callout */}
-              <div className="bg-cream-50 p-4 rounded-2xl border border-cream-200 mb-6">
-                <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider block mb-1">
+              <div className="bg-cream-50 p-4 sm:p-5 rounded-2xl border border-cream-200 mb-6 min-h-[108px] flex flex-col justify-center">
+                <span className="text-[11px] font-bold text-gray-500 uppercase tracking-wider block mb-1.5">
                   Price Per Plate
                 </span>
-                <div className="flex items-center justify-between gap-2">
-                  <div className="flex items-baseline gap-1.5">
-                    <span className="font-serif text-3xl sm:text-4xl font-extrabold text-[#0D3522]">
-                      ₹{MENU_PACKAGES[0].pricePerPlate}
+                <div className="flex items-center justify-between gap-3 flex-wrap sm:flex-nowrap">
+                  <div className="flex items-baseline">
+                    <span className="font-sans font-extrabold text-2xl sm:text-3xl text-[#0D3522] mr-0.5 leading-none select-none">
+                      ₹
                     </span>
-                    <span className="text-sm font-medium text-gray-600">/ plate</span>
+                    <span className="font-sans text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0D3522] tabular-nums leading-none">
+                      {MENU_PACKAGES[0].pricePerPlate}
+                    </span>
+                    <span className="text-xs sm:text-sm font-semibold text-gray-500 ml-1.5">
+                      / plate
+                    </span>
                   </div>
-                  <span className="inline-flex items-center text-[11px] font-bold text-amber-900 bg-amber-100/90 px-3 py-1.5 rounded-full border border-amber-300/70 shadow-xs shrink-0">
+                  <span className="inline-flex items-center text-[11px] font-bold text-amber-900 bg-amber-100/90 px-3 py-1.5 rounded-full border border-amber-300/70 shadow-xs shrink-0 self-center">
                     1 Sweet • 1 Curry Choice
                   </span>
                 </div>
@@ -137,11 +142,16 @@ export default function MenuPackagesSection({ onSelectPackage }: MenuPackagesSec
                 </div>
 
                 {/* Indicative Total Display */}
-                <div className="pt-2 border-t border-[#E2D5BC] flex items-center justify-between">
-                  <span className="text-xs text-gray-600 font-medium">Indicative Total:</span>
-                  <span className="font-serif text-lg font-bold text-[#14482E]">
-                    ₹{(MENU_PACKAGES[0].pricePerPlate * basicGuests).toLocaleString("en-IN")}
-                  </span>
+                <div className="pt-2.5 border-t border-[#E2D5BC] flex items-center justify-between">
+                  <span className="text-xs text-gray-700 font-semibold">Indicative Total:</span>
+                  <div className="flex items-baseline">
+                    <span className="font-sans font-bold text-base text-[#14482E] mr-0.5 leading-none select-none">
+                      ₹
+                    </span>
+                    <span className="font-sans text-xl sm:text-2xl font-extrabold tracking-tight text-[#14482E] tabular-nums leading-none">
+                      {(MENU_PACKAGES[0].pricePerPlate * basicGuests).toLocaleString("en-IN")}
+                    </span>
+                  </div>
                 </div>
                 <p className="text-[10px] text-gray-500 mt-1 italic">
                   *Indicative estimate. Final quote depends on menu selections and service setup.
@@ -218,23 +228,28 @@ export default function MenuPackagesSection({ onSelectPackage }: MenuPackagesSec
               <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0D3522] mb-1">
                 REGULAR VEG MENU
               </h3>
-              <p className="text-xs sm:text-sm text-gray-600 mb-6 min-h-[2.75rem] flex items-center">
+              <p className="text-xs sm:text-sm text-gray-600 mb-6 min-h-[3.25rem] flex items-center leading-relaxed">
                 {MENU_PACKAGES[1].tagline}
               </p>
 
               {/* Price Callout */}
-              <div className="bg-gradient-to-r from-[#FCFAF5] to-[#F7F0DF] p-4 rounded-2xl border border-gold-300 mb-6 shadow-xs">
-                <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider block mb-1">
+              <div className="bg-gradient-to-r from-[#FCFAF5] to-[#F7F0DF] p-4 sm:p-5 rounded-2xl border border-gold-300 mb-6 shadow-xs min-h-[108px] flex flex-col justify-center">
+                <span className="text-[11px] font-bold text-gray-500 uppercase tracking-wider block mb-1.5">
                   Price Per Plate
                 </span>
-                <div className="flex items-center justify-between gap-2">
-                  <div className="flex items-baseline gap-1.5">
-                    <span className="font-serif text-3xl sm:text-4xl font-extrabold text-[#7A5618]">
-                      ₹{MENU_PACKAGES[1].pricePerPlate}
+                <div className="flex items-center justify-between gap-3 flex-wrap sm:flex-nowrap">
+                  <div className="flex items-baseline">
+                    <span className="font-sans font-extrabold text-2xl sm:text-3xl text-[#7A5618] mr-0.5 leading-none select-none">
+                      ₹
                     </span>
-                    <span className="text-sm font-medium text-gray-600">/ plate</span>
+                    <span className="font-sans text-3xl sm:text-4xl font-extrabold tracking-tight text-[#7A5618] tabular-nums leading-none">
+                      {MENU_PACKAGES[1].pricePerPlate}
+                    </span>
+                    <span className="text-xs sm:text-sm font-semibold text-gray-500 ml-1.5">
+                      / plate
+                    </span>
                   </div>
-                  <span className="inline-flex items-center text-[11px] font-bold text-[#7A5618] bg-gold-200/90 px-3 py-1.5 rounded-full border border-gold-400/60 shadow-xs shrink-0">
+                  <span className="inline-flex items-center text-[11px] font-bold text-[#7A5618] bg-gold-200/90 px-3 py-1.5 rounded-full border border-gold-400/60 shadow-xs shrink-0 self-center">
                     1 Sweet • Both Curries • Roti
                   </span>
                 </div>
@@ -282,11 +297,16 @@ export default function MenuPackagesSection({ onSelectPackage }: MenuPackagesSec
                 </div>
 
                 {/* Indicative Total Display */}
-                <div className="pt-2 border-t border-[#E2D5BC] flex items-center justify-between">
-                  <span className="text-xs text-gray-600 font-medium">Indicative Total:</span>
-                  <span className="font-serif text-lg font-bold text-[#7A5618]">
-                    ₹{(MENU_PACKAGES[1].pricePerPlate * regularGuests).toLocaleString("en-IN")}
-                  </span>
+                <div className="pt-2.5 border-t border-[#E2D5BC] flex items-center justify-between">
+                  <span className="text-xs text-gray-700 font-semibold">Indicative Total:</span>
+                  <div className="flex items-baseline">
+                    <span className="font-sans font-bold text-base text-[#7A5618] mr-0.5 leading-none select-none">
+                      ₹
+                    </span>
+                    <span className="font-sans text-xl sm:text-2xl font-extrabold tracking-tight text-[#7A5618] tabular-nums leading-none">
+                      {(MENU_PACKAGES[1].pricePerPlate * regularGuests).toLocaleString("en-IN")}
+                    </span>
+                  </div>
                 </div>
                 <p className="text-[10px] text-gray-500 mt-1 italic">
                   *Indicative estimate. Final quote depends on menu selections and service setup.
