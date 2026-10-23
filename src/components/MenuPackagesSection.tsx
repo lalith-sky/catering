@@ -54,6 +54,11 @@ export default function MenuPackagesSection({ onSelectPackage }: MenuPackagesSec
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
           {/* 1. BASIC VEG MENU CARD */}
           <div className="bg-white rounded-3xl border-2 border-[#E3D4BA] hover:border-[#14482E] shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between overflow-hidden relative">
+            {/* Top Ribbon */}
+            <div className="bg-cream-200/80 text-[#14482E] text-center py-1.5 text-xs font-bold uppercase tracking-widest border-b border-[#E3D4BA]">
+              🌿 Traditional Feast for Family Functions
+            </div>
+
             <div className="p-6 sm:p-8">
               {/* Card Top Title & Badge */}
               <div className="flex items-center justify-between gap-2 mb-3">
@@ -68,21 +73,23 @@ export default function MenuPackagesSection({ onSelectPackage }: MenuPackagesSec
               <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0D3522] mb-1">
                 BASIC VEG MENU
               </h3>
-              <p className="text-xs sm:text-sm text-gray-600 mb-6">
+              <p className="text-xs sm:text-sm text-gray-600 mb-6 min-h-[2.75rem] flex items-center">
                 {MENU_PACKAGES[0].tagline}
               </p>
 
               {/* Price Callout */}
-              <div className="bg-cream-50 p-4 rounded-2xl border border-cream-200 mb-6 flex items-baseline justify-between">
-                <div>
-                  <span className="text-xs font-medium text-gray-500 block">Price Per Plate</span>
-                  <div className="flex items-baseline gap-1">
-                    <span className="font-serif text-4xl font-extrabold text-[#0D3522]">₹{MENU_PACKAGES[0].pricePerPlate}</span>
+              <div className="bg-cream-50 p-4 rounded-2xl border border-cream-200 mb-6">
+                <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider block mb-1">
+                  Price Per Plate
+                </span>
+                <div className="flex items-center justify-between gap-2">
+                  <div className="flex items-baseline gap-1.5">
+                    <span className="font-serif text-3xl sm:text-4xl font-extrabold text-[#0D3522]">
+                      ₹{MENU_PACKAGES[0].pricePerPlate}
+                    </span>
                     <span className="text-sm font-medium text-gray-600">/ plate</span>
                   </div>
-                </div>
-                <div className="text-right">
-                  <span className="text-[11px] font-semibold text-amber-900 bg-amber-100/80 px-2.5 py-1 rounded-full">
+                  <span className="inline-flex items-center text-[11px] font-bold text-amber-900 bg-amber-100/90 px-3 py-1.5 rounded-full border border-amber-300/70 shadow-xs shrink-0">
                     1 Sweet • 1 Curry Choice
                   </span>
                 </div>
@@ -211,21 +218,23 @@ export default function MenuPackagesSection({ onSelectPackage }: MenuPackagesSec
               <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0D3522] mb-1">
                 REGULAR VEG MENU
               </h3>
-              <p className="text-xs sm:text-sm text-gray-600 mb-6">
+              <p className="text-xs sm:text-sm text-gray-600 mb-6 min-h-[2.75rem] flex items-center">
                 {MENU_PACKAGES[1].tagline}
               </p>
 
               {/* Price Callout */}
-              <div className="bg-gradient-to-r from-[#FCFAF5] to-[#F7F0DF] p-4 rounded-2xl border border-gold-300 mb-6 flex items-baseline justify-between shadow-xs">
-                <div>
-                  <span className="text-xs font-medium text-gray-500 block">Price Per Plate</span>
-                  <div className="flex items-baseline gap-1">
-                    <span className="font-serif text-4xl font-extrabold text-[#7A5618]">₹{MENU_PACKAGES[1].pricePerPlate}</span>
+              <div className="bg-gradient-to-r from-[#FCFAF5] to-[#F7F0DF] p-4 rounded-2xl border border-gold-300 mb-6 shadow-xs">
+                <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider block mb-1">
+                  Price Per Plate
+                </span>
+                <div className="flex items-center justify-between gap-2">
+                  <div className="flex items-baseline gap-1.5">
+                    <span className="font-serif text-3xl sm:text-4xl font-extrabold text-[#7A5618]">
+                      ₹{MENU_PACKAGES[1].pricePerPlate}
+                    </span>
                     <span className="text-sm font-medium text-gray-600">/ plate</span>
                   </div>
-                </div>
-                <div className="text-right">
-                  <span className="text-[11px] font-bold text-[#7A5618] bg-gold-200/90 px-2.5 py-1 rounded-full border border-gold-400/50">
+                  <span className="inline-flex items-center text-[11px] font-bold text-[#7A5618] bg-gold-200/90 px-3 py-1.5 rounded-full border border-gold-400/60 shadow-xs shrink-0">
                     1 Sweet • Both Curries • Roti
                   </span>
                 </div>
