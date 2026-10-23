@@ -53,13 +53,13 @@ export default function MenuPackagesSection({ onSelectPackage }: MenuPackagesSec
         {/* The Two Packages Side by Side */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
           {/* 1. BASIC VEG MENU CARD */}
-          <div className="bg-white rounded-3xl border-2 border-[#E3D4BA] hover:border-[#14482E] shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between overflow-hidden relative">
+          <div className="bg-white rounded-3xl border-2 border-[#E3D4BA] hover:border-[#14482E] shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden relative">
             {/* Top Ribbon */}
             <div className="bg-cream-200/80 text-[#14482E] text-center py-1.5 text-xs font-bold uppercase tracking-widest border-b border-[#E3D4BA]">
               🌿 Traditional Feast for Family Functions
             </div>
 
-            <div className="p-6 sm:p-8">
+            <div className="p-6 sm:p-8 flex-1 flex flex-col">
               {/* Card Top Title & Badge */}
               <div className="flex items-center justify-between gap-2 mb-3">
                 <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-cream-100 text-[#14482E] border border-cream-300">
@@ -188,7 +188,7 @@ export default function MenuPackagesSection({ onSelectPackage }: MenuPackagesSec
             </div>
 
             {/* Bottom Actions for Basic Package */}
-            <div className="p-6 sm:p-8 bg-cream-50 border-t border-cream-200 flex flex-col sm:flex-row gap-3">
+            <div className="p-6 sm:p-8 bg-cream-50 border-t border-cream-200 flex flex-col sm:flex-row gap-3 mt-auto">
               <button
                 type="button"
                 onClick={() => scrollToBooking("basic", basicGuests)}
@@ -208,13 +208,13 @@ export default function MenuPackagesSection({ onSelectPackage }: MenuPackagesSec
           </div>
 
           {/* 2. REGULAR VEG MENU CARD (FEATURED / RECOMMENDED) */}
-          <div className="bg-white rounded-3xl border-2 border-[#B88E28] shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between overflow-hidden relative ring-2 ring-[#B88E28]/20">
+          <div className="bg-white rounded-3xl border-2 border-[#B88E28] shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden relative ring-2 ring-[#B88E28]/20">
             {/* Top Ribbon */}
             <div className="bg-gradient-to-r from-[#B88E28] via-[#D4AF37] to-[#B88E28] text-white text-center py-1.5 text-xs font-bold uppercase tracking-widest shadow-sm">
               ⭐ Most Popular for Weddings & Grand Celebrations
             </div>
 
-            <div className="p-6 sm:p-8">
+            <div className="p-6 sm:p-8 flex-1 flex flex-col">
               {/* Card Top Title & Badge */}
               <div className="flex items-center justify-between gap-2 mb-3">
                 <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-gold-100 text-[#7A5618] border border-gold-300">
@@ -357,7 +357,7 @@ export default function MenuPackagesSection({ onSelectPackage }: MenuPackagesSec
             </div>
 
             {/* Bottom Actions for Regular Package */}
-            <div className="p-6 sm:p-8 bg-gradient-to-r from-cream-100 via-cream-50 to-cream-100 border-t border-gold-200 flex flex-col sm:flex-row gap-3">
+            <div className="p-6 sm:p-8 bg-gradient-to-r from-cream-100 via-cream-50 to-cream-100 border-t border-gold-200 flex flex-col sm:flex-row gap-3 mt-auto">
               <button
                 type="button"
                 onClick={() => scrollToBooking("regular", regularGuests)}
