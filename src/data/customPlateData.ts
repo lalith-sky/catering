@@ -5,10 +5,9 @@ export interface CustomDish {
   description?: string;
   isPopular?: boolean;
   isPremium?: boolean;
-  // Per-plate cost contribution (used ONLY for calculation, never shown during selection)
+  // Per-plate price increment (used ONLY in background calculation, never displayed during selection)
   platePriceContribution: number;
-  // If the dish has a flat setup counter fee instead of / in addition to per plate
-  flatSetupCharge?: number;
+  isAccompaniment?: boolean;
 }
 
 export interface DishCategory {
@@ -16,7 +15,6 @@ export interface DishCategory {
   name: string;
   iconName: string;
   description: string;
-  recommendedMin?: number;
 }
 
 export const DISH_CATEGORIES: DishCategory[] = [
@@ -117,10 +115,10 @@ export const DISH_CATEGORIES: DishCategory[] = [
     description: "Soft rotis, phulkas, and tandoori naans freshly prepared",
   },
   {
-    id: "desserts-extras",
-    name: "Desserts & Live Counters",
-    iconName: "PartyPopper",
-    description: "Chilled ice creams, welcome drinks, and live interactive food stations",
+    id: "desserts",
+    name: "Desserts & Refreshments",
+    iconName: "Candy",
+    description: "Chilled celebration ice cream cups and refreshing welcome beverages",
   },
 ];
 
@@ -147,7 +145,7 @@ export const CUSTOM_DISHES: CustomDish[] = [
     name: "Rava Kesari",
     categoryId: "sweets",
     description: "Melt-in-mouth golden semolina pudding loaded with pure desi ghee and roasted cashews",
-    platePriceContribution: 25,
+    platePriceContribution: 20,
   },
   {
     id: "sw-bobbatlu",
@@ -155,7 +153,7 @@ export const CUSTOM_DISHES: CustomDish[] = [
     categoryId: "sweets",
     description: "Traditional festive sweet flatbread stuffed with fragrant lentil-jaggery puran",
     isPremium: true,
-    platePriceContribution: 35,
+    platePriceContribution: 30,
   },
   {
     id: "sw-malpua-rabri",
@@ -170,7 +168,7 @@ export const CUSTOM_DISHES: CustomDish[] = [
     name: "Payasam",
     categoryId: "sweets",
     description: "Silky South Indian vermicelli kheer simmered in creamy milk, cardamom, and raisins",
-    platePriceContribution: 25,
+    platePriceContribution: 20,
   },
   {
     id: "sw-poornam-boorelu",
@@ -178,7 +176,7 @@ export const CUSTOM_DISHES: CustomDish[] = [
     categoryId: "sweets",
     description: "Auspicious Andhra sweet balls with sweet chana dal stuffing deep-fried in rice batter",
     isPremium: true,
-    platePriceContribution: 35,
+    platePriceContribution: 30,
   },
 
   // 2. Flavoured Rice
@@ -195,21 +193,21 @@ export const CUSTOM_DISHES: CustomDish[] = [
     name: "Lemon Rice",
     categoryId: "flavoured-rice",
     description: "Vibrant zesty lemon rice with turmeric, ginger, green chillies, and roasted lentils",
-    platePriceContribution: 25,
+    platePriceContribution: 20,
   },
   {
     id: "fr-tomato-rice",
     name: "Tomato Rice",
     categoryId: "flavoured-rice",
     description: "Spicy and tangy spiced tomato rice slow-cooked with fresh coriander and whole spices",
-    platePriceContribution: 25,
+    platePriceContribution: 20,
   },
   {
     id: "fr-veg-pulao",
     name: "Veg Pulao",
     categoryId: "flavoured-rice",
     description: "Mild aromatic long-grain basmati rice gently cooked with garden-fresh vegetables",
-    platePriceContribution: 30,
+    platePriceContribution: 25,
   },
   {
     id: "fr-bagara-rice",
@@ -240,7 +238,7 @@ export const CUSTOM_DISHES: CustomDish[] = [
     categoryId: "flavoured-rice",
     description: "Rich royal basmati pulao studded with golden fried whole cashews and ghee",
     isPremium: true,
-    platePriceContribution: 40,
+    platePriceContribution: 35,
   },
   {
     id: "fr-hyderabadi-biryani",
@@ -248,7 +246,7 @@ export const CUSTOM_DISHES: CustomDish[] = [
     categoryId: "flavoured-rice",
     description: "Authentic Nizami spiced dum biryani prepared with layered basmati and rich masala gravy",
     isPremium: true,
-    platePriceContribution: 40,
+    platePriceContribution: 35,
   },
 
   // 3. Wet Curries
@@ -265,7 +263,7 @@ export const CUSTOM_DISHES: CustomDish[] = [
     name: "Aloo Kurma",
     categoryId: "wet-curries",
     description: "Tender potato chunks simmered in a creamy coconut and poppy-seed fragrant kurma gravy",
-    platePriceContribution: 30,
+    platePriceContribution: 25,
   },
   {
     id: "wc-paneer-butter-masala",
@@ -273,7 +271,7 @@ export const CUSTOM_DISHES: CustomDish[] = [
     categoryId: "wet-curries",
     description: "Cottage cheese cubes bathed in rich, velvety tomato butter gravy with dried fenugreek",
     isPopular: true,
-    platePriceContribution: 45,
+    platePriceContribution: 35,
   },
   {
     id: "wc-kaju-curry",
@@ -281,7 +279,7 @@ export const CUSTOM_DISHES: CustomDish[] = [
     categoryId: "wet-curries",
     description: "Luxurious creamy cashew nut curry cooked in an aromatic onion-tomato spiced sauce",
     isPremium: true,
-    platePriceContribution: 50,
+    platePriceContribution: 40,
   },
   {
     id: "wc-paneer-tikka-masala",
@@ -289,7 +287,7 @@ export const CUSTOM_DISHES: CustomDish[] = [
     categoryId: "wet-curries",
     description: "Char-grilled paneer cubes simmered in a spiced tandoori tikka gravy with capsicum",
     isPremium: true,
-    platePriceContribution: 45,
+    platePriceContribution: 35,
   },
 
   // 4. Vegetable Curries
@@ -305,7 +303,7 @@ export const CUSTOM_DISHES: CustomDish[] = [
     name: "Aloo Tomato Curry",
     categoryId: "veg-curries",
     description: "Comforting classic curry of potatoes and ripe country tomatoes cooked with curry leaves",
-    platePriceContribution: 25,
+    platePriceContribution: 20,
   },
   {
     id: "vc-navratan-kurma",
@@ -313,7 +311,7 @@ export const CUSTOM_DISHES: CustomDish[] = [
     categoryId: "veg-curries",
     description: "Nine gems of vegetables, dried fruits, and paneer cooked in a mildly sweet, royal white gravy",
     isPremium: true,
-    platePriceContribution: 35,
+    platePriceContribution: 30,
   },
   {
     id: "vc-special-veg",
@@ -323,13 +321,14 @@ export const CUSTOM_DISHES: CustomDish[] = [
     platePriceContribution: 25,
   },
 
-  // 5. White Rice
+  // 5. White Rice (Accompaniment)
   {
     id: "wr-steamed-white-rice",
     name: "Steamed White Rice",
     categoryId: "white-rice",
     description: "Aged Sona Masoori rice, cooked to fluffy perfection, served piping hot",
-    platePriceContribution: 15,
+    platePriceContribution: 10,
+    isAccompaniment: true,
   },
 
   // 6. Fry Items
@@ -360,7 +359,7 @@ export const CUSTOM_DISHES: CustomDish[] = [
     name: "Beans Fry",
     categoryId: "fry-items",
     description: "Finely chopped French beans sautéed with grated coconut and roasted gram lentil mix",
-    platePriceContribution: 25,
+    platePriceContribution: 20,
   },
   {
     id: "fy-special-veg-fry",
@@ -370,52 +369,58 @@ export const CUSTOM_DISHES: CustomDish[] = [
     platePriceContribution: 25,
   },
 
-  // 7. Dal
+  // 7. Dal (Accompaniment)
   {
     id: "dl-tomato-pappu",
     name: "Tomato Pappu",
     categoryId: "dal",
     description: "Tangy toor dal cooked with ripe tomatoes and tempered with hing, garlic, and ghee",
     isPopular: true,
-    platePriceContribution: 20,
+    platePriceContribution: 10,
+    isAccompaniment: true,
   },
   {
     id: "dl-palakura-pappu",
     name: "Palakura Pappu",
     categoryId: "dal",
     description: "Nutritious toor dal slow-cooked with fresh tender spinach leaves and green chillies",
-    platePriceContribution: 20,
+    platePriceContribution: 10,
+    isAccompaniment: true,
   },
   {
     id: "dl-mudda-pappu",
     name: "Mudda Pappu",
     categoryId: "dal",
     description: "Thick, unadulterated cooked toor dal served with pure desi ghee and avakaya pickle",
-    platePriceContribution: 20,
+    platePriceContribution: 10,
+    isAccompaniment: true,
   },
 
-  // 8. Sambar / Rasam
+  // 8. Sambar / Rasam (Accompaniment)
   {
     id: "sr-veg-sambar",
     name: "Vegetable Sambar",
     categoryId: "sambar-rasam",
     description: "Traditional drumstick, pumpkin, and shallot sambar brewed with authentic home-ground masala",
     isPopular: true,
-    platePriceContribution: 15,
+    platePriceContribution: 10,
+    isAccompaniment: true,
   },
   {
     id: "sr-tomato-rasam",
     name: "Tomato Rasam",
     categoryId: "sambar-rasam",
     description: "Peppery, digestive, tangy rasam infused with crushed garlic, cumin, and fresh coriander",
-    platePriceContribution: 15,
+    platePriceContribution: 10,
+    isAccompaniment: true,
   },
   {
     id: "sr-mixed-veg-sambar",
     name: "Mixed Vegetable Sambar",
     categoryId: "sambar-rasam",
     description: "Rich South Indian sambar loaded with carrots, bottle gourd, drumsticks, and tamarind",
-    platePriceContribution: 15,
+    platePriceContribution: 10,
+    isAccompaniment: true,
   },
 
   // 9. Snacks & Starters
@@ -432,14 +437,14 @@ export const CUSTOM_DISHES: CustomDish[] = [
     name: "Masala Vada",
     categoryId: "snacks-starters",
     description: "Crunchy golden chana dal patties infused with onions, fennel seeds, and green chillies",
-    platePriceContribution: 25,
+    platePriceContribution: 20,
   },
   {
     id: "sn-banana-bajji",
     name: "Banana Bajji",
     categoryId: "snacks-starters",
     description: "Crispy raw plantain fritters served piping hot with coconut chutney",
-    platePriceContribution: 25,
+    platePriceContribution: 20,
   },
   {
     id: "sn-veg-manchurian",
@@ -447,14 +452,14 @@ export const CUSTOM_DISHES: CustomDish[] = [
     categoryId: "snacks-starters",
     description: "Crispy vegetable dumplings tossed in a savoury ginger, garlic, and soy glaze",
     isPopular: true,
-    platePriceContribution: 30,
+    platePriceContribution: 25,
   },
   {
     id: "sn-crispy-corn",
     name: "Crispy Corn",
     categoryId: "snacks-starters",
     description: "Golden fried sweet corn kernels tossed with chaat masala, pepper, and fresh lemon",
-    platePriceContribution: 30,
+    platePriceContribution: 25,
   },
   {
     id: "sn-paneer-tikka",
@@ -462,39 +467,43 @@ export const CUSTOM_DISHES: CustomDish[] = [
     categoryId: "snacks-starters",
     description: "Juicy marinated cottage cheese cubes roasted in tandoor with bell peppers and onions",
     isPremium: true,
-    platePriceContribution: 40,
+    platePriceContribution: 35,
   },
 
-  // 10. Chutneys
+  // 10. Chutneys (Accompaniment)
   {
     id: "ch-tomato-pachadi",
     name: "Tomato Pachadi",
     categoryId: "chutneys",
     description: "Country tomato stone-ground chutney with dry red chillies, mustard, and curry leaves",
-    platePriceContribution: 10,
+    platePriceContribution: 5,
+    isAccompaniment: true,
   },
   {
     id: "ch-coconut-chutney",
     name: "Coconut Chutney",
     categoryId: "chutneys",
     description: "Fresh grated coconut ground with roasted chana dal and green chillies",
-    platePriceContribution: 10,
+    platePriceContribution: 5,
+    isAccompaniment: true,
   },
 
-  // 11. Pickles
+  // 11. Pickles (Accompaniment)
   {
     id: "pk-mango-pickle",
     name: "Mango Pickle",
     categoryId: "pickles",
     description: "Traditional spicy Telugu Avakaya cut raw mango pickle steeped in pure sesame oil",
-    platePriceContribution: 8,
+    platePriceContribution: 5,
+    isAccompaniment: true,
   },
   {
     id: "pk-lemon-pickle",
     name: "Lemon Pickle",
     categoryId: "pickles",
     description: "Sun-ripened lime pickle cured in sea salt, turmeric, and fenugreek spices",
-    platePriceContribution: 8,
+    platePriceContribution: 5,
+    isAccompaniment: true,
   },
 
   // 12. Salads
@@ -506,38 +515,42 @@ export const CUSTOM_DISHES: CustomDish[] = [
     platePriceContribution: 10,
   },
 
-  // 13. Papad
+  // 13. Papad (Accompaniment)
   {
     id: "pd-appadam",
     name: "Appadam",
     categoryId: "papad",
     description: "Crispy urad dal papad roasted or fried to light golden crispness",
-    platePriceContribution: 8,
+    platePriceContribution: 5,
+    isAccompaniment: true,
   },
   {
     id: "pd-fryums",
     name: "Fryums",
     categoryId: "papad",
     description: "Colourful crunchy festive fryums enjoyed by guests of all ages",
-    platePriceContribution: 8,
+    platePriceContribution: 5,
+    isAccompaniment: true,
   },
 
-  // 14. Curd
+  // 14. Curd (Accompaniment)
   {
     id: "cd-fresh-plain-curd",
     name: "Fresh Plain Curd",
     categoryId: "curd",
     description: "Fresh, thick, non-sour whole milk curd served chilled for the final rice course",
-    platePriceContribution: 15,
+    platePriceContribution: 10,
+    isAccompaniment: true,
   },
 
-  // 15. Ghee
+  // 15. Ghee (Accompaniment)
   {
     id: "gh-pure-ghee",
     name: "Pure Ghee",
     categoryId: "ghee",
     description: "Granular pure cow ghee served hot over rice, sweets, and dal",
-    platePriceContribution: 15,
+    platePriceContribution: 10,
+    isAccompaniment: true,
   },
 
   // 16. Breads
@@ -574,7 +587,7 @@ export const CUSTOM_DISHES: CustomDish[] = [
     name: "Butter Naan",
     categoryId: "breads",
     description: "Fluffy tandoori naan brushed generously with pure butter",
-    platePriceContribution: 30,
+    platePriceContribution: 25,
   },
   {
     id: "br-garlic-naan",
@@ -582,14 +595,14 @@ export const CUSTOM_DISHES: CustomDish[] = [
     categoryId: "breads",
     description: "Aromatic tandoor naan topped with minced roasted garlic and fresh coriander",
     isPopular: true,
-    platePriceContribution: 35,
+    platePriceContribution: 30,
   },
 
-  // 17. Desserts & Extras
+  // 17. Desserts & Refreshments (Only Food items - Live counters kept completely separate)
   {
     id: "de-ice-cream",
     name: "Ice Cream",
-    categoryId: "desserts-extras",
+    categoryId: "desserts",
     description: "Creamy vanilla, strawberry, or butterscotch dessert cups",
     isPopular: true,
     platePriceContribution: 25,
@@ -597,27 +610,9 @@ export const CUSTOM_DISHES: CustomDish[] = [
   {
     id: "de-welcome-drink",
     name: "Welcome Drink",
-    categoryId: "desserts-extras",
+    categoryId: "desserts",
     description: "Refreshing welcome beverage (Mint Lime, Panagam, or Fresh Fruit Punch)",
     platePriceContribution: 20,
-  },
-  {
-    id: "de-pani-puri-counter",
-    name: "Pani Puri Counter",
-    categoryId: "desserts-extras",
-    description: "Interactive live pani puri station with tangy pudina water and sweet tamarind water",
-    isPremium: true,
-    platePriceContribution: 30,
-    flatSetupCharge: 3500,
-  },
-  {
-    id: "de-live-chaat-counter",
-    name: "Live Chaat Counter",
-    categoryId: "desserts-extras",
-    description: "Dedicated live counter serving Sev Puri, Dahi Puri, Aloo Tikki, and Papdi Chaat",
-    isPremium: true,
-    platePriceContribution: 40,
-    flatSetupCharge: 5000,
   },
 ];
 
@@ -626,16 +621,15 @@ export const GUEST_QUICK_PRESETS = [50, 100, 200, 300, 500];
 export const BASE_PLATE_MINIMUM = 50;
 
 /**
- * Configurable pricing engine for custom plates
- * - Base service fee includes essential traditional tableware, buffet management, warm water & staff
- * - Sum of all selected dish contributions
- * - Live counter flat charges
+ * Transparent, reasonable pricing engine for custom plates
+ * - Purely based on selected food dishes
+ * - Live Counters are kept strictly separate as instructed
+ * - Basic accompaniments (rice, dal, sambar, curd, ghee, papad, pickle, chutney) are included affordably
+ * - Per-plate price scales proportionally with the number and variety of dishes
  */
 export interface CustomPlateCalculationResult {
   pricePerPlate: number;
   totalPerPlateFoodCost: number;
-  additionalCharges: { name: string; amount: number }[];
-  totalAdditionalCharges: number;
   estimatedTotal: number;
   selectedDishesCount: number;
   isEligible: boolean;
@@ -652,8 +646,6 @@ export function calculateCustomPlatePrice(
     return {
       pricePerPlate: 0,
       totalPerPlateFoodCost: 0,
-      additionalCharges: [],
-      totalAdditionalCharges: 0,
       estimatedTotal: 0,
       selectedDishesCount: 0,
       isEligible,
@@ -661,37 +653,39 @@ export function calculateCustomPlatePrice(
     };
   }
 
-  // Base catering operational cost per plate (staff, tableware, presentation setup)
-  const baseServiceCost = 60;
+  // Base operational & traditional service fee per plate (includes clean service staff, buffet arrangement, water)
+  // Keeps prices affordable and directly in line with AASWADYA's ₹250 (Basic) and ₹310 (Regular) packages
+  const baseServiceFee = 100;
 
-  let totalPlateSum = baseServiceCost;
-  const additionalCharges: { name: string; amount: number }[] = [];
+  let totalPlateSum = baseServiceFee;
+
+  // Track accompaniments count to ensure they don't blow up the price unnecessarily
+  let accompanimentContribution = 0;
+  const maxAccompanimentCharge = 40; // Caps all basic accompaniments combined to ₹40 max so they stay truly affordable!
 
   for (const dishId of selectedDishIds) {
     const dish = CUSTOM_DISHES.find((d) => d.id === dishId);
     if (!dish) continue;
 
-    totalPlateSum += dish.platePriceContribution;
-
-    if (dish.flatSetupCharge && dish.flatSetupCharge > 0) {
-      additionalCharges.push({
-        name: `${dish.name} (Live Counter Setup)`,
-        amount: dish.flatSetupCharge,
-      });
+    if (dish.isAccompaniment) {
+      accompanimentContribution = Math.min(
+        maxAccompanimentCharge,
+        accompanimentContribution + dish.platePriceContribution
+      );
+    } else {
+      totalPlateSum += dish.platePriceContribution;
     }
   }
 
-  // Round pricePerPlate to nearest 5 for clean, professional catering pricing
-  const roundedPerPlate = Math.ceil(totalPlateSum / 5) * 5;
+  totalPlateSum += accompanimentContribution;
 
-  const totalAdditionalCharges = additionalCharges.reduce((acc, c) => acc + c.amount, 0);
-  const estimatedTotal = roundedPerPlate * guestCount + totalAdditionalCharges;
+  // Round pricePerPlate to nearest clean 5 or 10 rupees for transparent, professional catering pricing
+  const roundedPerPlate = Math.ceil(totalPlateSum / 5) * 5;
+  const estimatedTotal = roundedPerPlate * guestCount;
 
   return {
     pricePerPlate: roundedPerPlate,
-    totalPerPlateFoodCost: roundedPerPlate * guestCount,
-    additionalCharges,
-    totalAdditionalCharges,
+    totalPerPlateFoodCost: estimatedTotal,
     estimatedTotal,
     selectedDishesCount: selectedDishIds.length,
     isEligible,

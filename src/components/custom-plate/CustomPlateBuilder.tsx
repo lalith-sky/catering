@@ -234,9 +234,6 @@ export default function CustomPlateBuilder() {
       `• *Number of Guests:* ${guestCount} guests`,
       `• *Total Selected Dishes:* ${selectedDishIds.length} items`,
       `• *Estimated Price Per Plate:* ₹${calculation.pricePerPlate} / plate`,
-      calculation.totalAdditionalCharges > 0
-        ? `• *Additional Counter Charges:* ₹${calculation.totalAdditionalCharges.toLocaleString("en-IN")}`
-        : null,
       `• *Total Estimated Quote:* ₹${calculation.estimatedTotal.toLocaleString("en-IN")}`,
       ``,
       `*CUSTOMISED MENU:*${menuText}`,
@@ -575,11 +572,6 @@ export default function CustomPlateBuilder() {
                             ✦ Special
                           </span>
                         )}
-                        {dish.flatSetupCharge && (
-                          <span className="text-[10px] font-bold text-purple-900 bg-purple-100 px-2 py-0.5 rounded-full border border-purple-300">
-                            Live Station
-                          </span>
-                        )}
                       </div>
 
                       <span
@@ -806,32 +798,11 @@ export default function CustomPlateBuilder() {
                           {calculation.estimatedTotal.toLocaleString("en-IN")}
                         </span>
                       </div>
-                      {calculation.totalAdditionalCharges > 0 ? (
-                        <span className="text-[11px] text-purple-800 font-medium block mt-0.5">
-                          Includes ₹{calculation.totalAdditionalCharges.toLocaleString("en-IN")} Live Setup Charges
-                        </span>
-                      ) : (
-                        <span className="text-[11px] text-gray-500 block mt-0.5">
-                          Indicative estimated total
-                        </span>
-                      )}
+                      <span className="text-[11px] text-gray-500 block mt-0.5">
+                        Indicative estimated total ({guestCount} guests × ₹{calculation.pricePerPlate})
+                      </span>
                     </div>
                   </div>
-
-                  {/* Additional charges list if any */}
-                  {calculation.additionalCharges.length > 0 && (
-                    <div className="mt-4 pt-4 border-t border-cream-300 text-xs text-gray-700 space-y-1">
-                      <span className="font-bold uppercase tracking-wider text-[#0D3522] block mb-1">
-                        Live Counters & Special Setups:
-                      </span>
-                      {calculation.additionalCharges.map((chg) => (
-                        <div key={chg.name} className="flex justify-between">
-                          <span>• {chg.name}</span>
-                          <span className="font-bold">₹{chg.amount.toLocaleString("en-IN")}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
                 </div>
 
                 {/* 2. Complete Selected Menu (Print & View) */}

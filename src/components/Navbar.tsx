@@ -30,6 +30,7 @@ export default function Navbar({ onSelectPackage }: NavbarProps) {
     { name: "About Us", href: "#about" },
     { name: "Occasions", href: "#celebrations" },
     { name: "Menu Packages", href: "#menus" },
+    { name: "Live Counters", href: "#live-counters" },
     { name: "Customise Plate", href: "/customise-plate", isHighlight: true },
     { name: "Catering Services", href: "#services" },
     { name: "Why Choose Us", href: "#why-choose-us" },

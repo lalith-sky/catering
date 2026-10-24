@@ -7,6 +7,7 @@ import OccasionsSection, { OccasionItem } from "@/components/OccasionsSection";
 import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
 import MenuPackagesSection from "@/components/MenuPackagesSection";
+import LiveCountersSection from "@/components/LiveCountersSection";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import BookingEnquiryForm from "@/components/BookingEnquiryForm";
 import ContactSection from "@/components/ContactSection";
@@ -71,7 +72,10 @@ export default function Home() {
       {/* 5. Menu Packages (Basic & Regular only) */}
       <MenuPackagesSection onSelectPackage={handleSelectPackage} />
 
-      {/* 6. Why Choose Us */}
+      {/* 6. Live Counters Available (Small, attractive, no prices) */}
+      <LiveCountersSection />
+
+      {/* 7. Why Choose Us */}
       <WhyChooseUsSection />
 
       {/* 7. Booking Enquiry Form */}
