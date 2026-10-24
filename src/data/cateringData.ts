@@ -4,10 +4,12 @@ export interface MenuItem {
 }
 
 export interface MenuPackage {
-  id: "basic" | "regular";
+  id: "basic" | "regular" | "premium";
   name: string;
   subtitle: string;
   pricePerPlate: number;
+  minGuests?: number;
+  minEstimatedTotal?: number;
   highlightBadge?: string;
   tagline: string;
   keyDifferentiators: string[];
@@ -175,6 +177,56 @@ export const MENU_PACKAGES: MenuPackage[] = [
       {
         category: "Mouth Freshener",
       },
+    ],
+  },
+  {
+    id: "premium",
+    name: "AASWADYA Premium Feast",
+    subtitle: "Grand Royal Celebration & Live Stations",
+    pricePerPlate: 760,
+    minGuests: 200,
+    minEstimatedTotal: 152000,
+    highlightBadge: "Royal Feast & Live Stations",
+    tagline: "Ultra-luxury celebratory banquet with live stations, fresh fruit & chaat counters, authentic Telugu delicacies, and royal celebratory service.",
+    sweetCount: "2 Sweets & 2 Desserts",
+    curryRule: "South Indian Curry + 2 North Indian Curries + Traditional Fry Curry",
+    includesRoti: true,
+    includesSaladPickle: true,
+    keyDifferentiators: [
+      "2 Welcome Drinks, 2 Sweets & 2 Desserts",
+      "South Indian Curry + 2 North Indian Curries + Traditional Fry Curry",
+      "Flavoured Rice (2 Varieties) & Rotis (2 Varieties)",
+      "4 Live Stations: Dosa (3 Var), Chaat (5 Var), Fruit (8 Var) & Pan Counter",
+      "Live Salad Counter & Sprouts included",
+      "Pure Desi Ghee & Traditional Powders (2 Var)",
+    ],
+    sections: [
+      { category: "Welcome Drinks", badge: "2 Varieties" },
+      { category: "Sweets", badge: "2 Varieties" },
+      { category: "Desserts", badge: "2 Varieties" },
+      { category: "Starters", badge: "2 Varieties" },
+      { category: "Rotis", badge: "2 Varieties" },
+      { category: "South Indian Curry", badge: "1 Variety" },
+      { category: "Traditional Fry Curry", badge: "1 Variety" },
+      { category: "Flavoured Rice", badge: "2 Varieties" },
+      { category: "North Indian Curries", badge: "2 Varieties" },
+      { category: "Steamed Plain Rice" },
+      { category: "Raitha", badge: "1 Variety" },
+      { category: "Dal" },
+      { category: "Traditional Sambar" },
+      { category: "Rasam" },
+      { category: "Pickles", badge: "4 Varieties" },
+      { category: "Fresh Curd" },
+      { category: "Papad" },
+      { category: "Live Pan Counter" },
+      { category: "Packaged Drinking Water" },
+      { category: "Pure Ghee" },
+      { category: "Traditional Powders", badge: "2 Varieties" },
+      { category: "Live Chaat Counter", badge: "5 Varieties" },
+      { category: "Fresh Fruit Counter", badge: "8 Varieties" },
+      { category: "Live Dosa Counter", badge: "3 Varieties" },
+      { category: "Live Salad Counter" },
+      { category: "Sprouts" },
     ],
   },
 ];

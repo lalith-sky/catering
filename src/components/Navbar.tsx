@@ -7,7 +7,7 @@ import { Phone, Mail, MapPin, Menu, X, Utensils, MessageCircle } from "lucide-re
 import { BUSINESS_CONFIG } from "@/data/cateringData";
 
 interface NavbarProps {
-  onSelectPackage?: (packageId: "basic" | "regular") => void;
+  onSelectPackage?: (packageId: "basic" | "regular" | "premium") => void;
 }
 
 export default function Navbar({ onSelectPackage }: NavbarProps) {

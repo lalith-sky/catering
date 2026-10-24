@@ -20,9 +20,9 @@ import {
 import { BUSINESS_CONFIG, MENU_PACKAGES } from "@/data/cateringData";
 
 interface BookingFormProps {
-  selectedPackageId: "basic" | "regular";
+  selectedPackageId: "basic" | "regular" | "premium";
   initialGuestCount?: number;
-  onPackageChange: (pkgId: "basic" | "regular") => void;
+  onPackageChange: (pkgId: "basic" | "regular" | "premium") => void;
   selectedEventType?: string;
 }
 
@@ -33,7 +33,7 @@ interface FormData {
   eventType: string;
   eventDate: string;
   numberOfGuests: number;
-  selectedPackage: "basic" | "regular";
+  selectedPackage: "basic" | "regular" | "premium";
   eventLocation: string;
   specialRequests: string;
 }
@@ -92,6 +92,8 @@ export default function BookingEnquiryForm({
 
     if (!formData.numberOfGuests || formData.numberOfGuests < 10) {
       newErrors.numberOfGuests = "Please enter a valid guest count (min 10).";
+    } else if (formData.selectedPackage === "premium" && formData.numberOfGuests < 200) {
+      newErrors.numberOfGuests = "AASWADYA Premium Feast requires a minimum booking of 200 guests (₹1,52,000 min total).";
     }
 
     if (!formData.eventLocation.trim()) {
@@ -131,7 +133,9 @@ export default function BookingEnquiryForm({
     const pkgName =
       formData.selectedPackage === "basic"
         ? `Basic Menu (₹${MENU_PACKAGES[0].pricePerPlate}/plate)`
-        : `Regular Menu (₹${MENU_PACKAGES[1].pricePerPlate}/plate)`;
+        : formData.selectedPackage === "regular"
+        ? `Regular Menu (₹${MENU_PACKAGES[1].pricePerPlate}/plate)`
+        : `AASWADYA Premium Feast (₹${MENU_PACKAGES[2].pricePerPlate}/plate - Min 200 Guests)`;
     const message = `Hello AASWADYA Caterers! I would like to enquire about vegetarian catering for my upcoming event.
 
 📋 *Booking Details:*
@@ -187,7 +191,11 @@ Please share the detailed quote and availability. Thank you!`;
                 <p className="text-sm sm:text-base text-gray-700 max-w-lg mx-auto">
                   Your catering enquiry for the{" "}
                   <strong>
-                    {formData.selectedPackage === "basic" ? "Basic Menu" : "Regular Menu"}
+                    {formData.selectedPackage === "basic"
+                      ? "Basic Menu"
+                      : formData.selectedPackage === "regular"
+                      ? "Regular Menu"
+                      : "AASWADYA Premium Feast"}
                   </strong>{" "}
                   has been noted successfully.
                 </p>
@@ -263,7 +271,9 @@ Please share the detailed quote and availability. Thank you!`;
                   <span className="text-xs text-gray-600 block mt-1">
                     {formData.selectedPackage === "basic"
                       ? "1 Sweet • 1 Curry Choice (South / North Indian) • Pickle Included"
-                      : "1 Sweet • South & North Indian Curries • Roti & Salad"}
+                      : formData.selectedPackage === "regular"
+                      ? "1 Sweet • South & North Indian Curries • Roti & Salad"
+                      : "2 Sweets • 2 Desserts • 4 Live Stations • 26 Royal Delicacies (Min. 200 Guests)"}
                   </span>
                 </div>
 
@@ -459,14 +469,23 @@ Please share the detailed quote and availability. Thank you!`;
                     id="packageSelect"
                     value={formData.selectedPackage}
                     onChange={(e) => {
-                      const val = e.target.value as "basic" | "regular";
-                      setFormData({ ...formData, selectedPackage: val });
+                      const val = e.target.value as "basic" | "regular" | "premium";
+                      const newGuestCount =
+                        val === "premium" && formData.numberOfGuests < 200
+                          ? 200
+                          : formData.numberOfGuests;
+                      setFormData({
+                        ...formData,
+                        selectedPackage: val,
+                        numberOfGuests: newGuestCount,
+                      });
                       onPackageChange(val);
                     }}
                     className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#D8C7A9] text-sm text-[#0D3522] font-semibold focus:outline-none focus:ring-2 focus:ring-[#14482E] transition-all"
                   >
                     <option value="basic">BASIC MENU — ₹{MENU_PACKAGES[0].pricePerPlate} / plate (1 Sweet, 1 Curry Choice, Pickle)</option>
                     <option value="regular">REGULAR MENU — ₹{MENU_PACKAGES[1].pricePerPlate} / plate (1 Sweet, South & North Indian Curries, Roti, Salad)</option>
+                    <option value="premium">AASWADYA PREMIUM FEAST — ₹{MENU_PACKAGES[2].pricePerPlate} / plate (Min. 200 Guests, 26 Courses & Live Stations)</option>
                   </select>
                 </div>
 

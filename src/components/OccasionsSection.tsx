@@ -9,7 +9,7 @@ export interface OccasionItem {
   name: string;
   image: string;
   formEventType: string;
-  recommendedPackage: "basic" | "regular";
+  recommendedPackage: "basic" | "regular" | "premium";
   guestRecommendation: string;
   tagline: string;
 }

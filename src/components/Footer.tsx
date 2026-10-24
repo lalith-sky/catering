@@ -64,6 +64,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a href="#menus" className="hover:text-gold-300 transition-colors">
+                  AASWADYA Premium Feast (₹{MENU_PACKAGES[2].pricePerPlate})
+                </a>
+              </li>
+              <li>
                 <a href="#why-choose-us" className="hover:text-gold-300 transition-colors">
                   Why Choose Us
                 </a>

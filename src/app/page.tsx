@@ -15,11 +15,11 @@ import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export default function Home() {
-  const [selectedPackageId, setSelectedPackageId] = useState<"basic" | "regular">("regular");
+  const [selectedPackageId, setSelectedPackageId] = useState<"basic" | "regular" | "premium">("regular");
   const [guestCount, setGuestCount] = useState<number>(100);
   const [selectedEventType, setSelectedEventType] = useState<string>("Wedding / Engagement");
 
-  const handleSelectPackage = (packageId: "basic" | "regular", count?: number) => {
+  const handleSelectPackage = (packageId: "basic" | "regular" | "premium", count?: number) => {
     setSelectedPackageId(packageId);
     if (count) {
       setGuestCount(count);
