@@ -123,7 +123,7 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
               <div className="relative w-full max-w-xs aspect-video rounded-xl overflow-hidden border-2 border-gold-400/50 shadow-lg">
                 <Image
                   src="/images/curry-spread.jpg"
-                  alt="AASWADYA Catering Curries and Snacks"
+                  alt="AASWADYA Caterers Traditional Curries and Delicacies"
                   fill
                   className="object-cover"
                 />

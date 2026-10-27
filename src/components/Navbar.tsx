@@ -181,7 +181,7 @@ export default function Navbar({ onSelectPackage }: NavbarProps) {
           <div className="flex flex-col gap-4">
             <div className="flex items-center justify-between pb-3 border-b border-cream-300">
               <span className="text-xs font-semibold uppercase tracking-wider text-[#B88E28]">
-                AASWADYA Menu & Navigation
+                AASWADYA Caterers Menu & Navigation
               </span>
               <span className="text-xs px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-medium">
                 Pure Veg

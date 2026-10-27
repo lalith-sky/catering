@@ -45,7 +45,7 @@ export default function Footer() {
             <ul className="space-y-2 text-xs sm:text-sm text-cream-200/90">
               <li>
                 <a href="#about" className="hover:text-gold-300 transition-colors">
-                  About AASWADYA
+                  About AASWADYA Caterers
                 </a>
               </li>
               <li>
@@ -67,6 +67,14 @@ export default function Footer() {
                 <a href="#menus" className="hover:text-gold-300 transition-colors">
                   AASWADYA Premium Feast (₹{MENU_PACKAGES[2].pricePerPlate})
                 </a>
+              </li>
+              <li>
+                <Link
+                  href="/customise-plate"
+                  className="hover:text-gold-300 text-gold-300 font-semibold transition-colors flex items-center gap-1"
+                >
+                  <span>Customise Plate & Quotation →</span>
+                </Link>
               </li>
               <li>
                 <a href="#why-choose-us" className="hover:text-gold-300 transition-colors">

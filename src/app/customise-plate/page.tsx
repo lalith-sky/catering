@@ -5,9 +5,21 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import CustomPlateBuilder from "@/components/custom-plate/CustomPlateBuilder";
 
 export const metadata: Metadata = {
-  title: "Customise Your Plate | AASWADYA Caterers Hyderabad",
+  title: "Customise Your Plate & Quotation | AASWADYA Caterers Hyderabad",
   description:
-    "Build your own custom vegetarian catering plate with AASWADYA Caterers. Select your favourite sweets, biryanis, wet curries, fries, breads, and live counters for events in Hyderabad.",
+    "Build your custom pure vegetarian catering menu with AASWADYA Caterers. Select your favourite dishes and get an instant quotation for events in Hyderabad.",
+  alternates: {
+    canonical: "https://catering-one-self.vercel.app/customise-plate",
+  },
+  openGraph: {
+    title: "Customise Your Plate & Quotation | AASWADYA Caterers Hyderabad",
+    description:
+      "Build your custom pure vegetarian catering menu with AASWADYA Caterers. Select your favourite dishes and get an instant quotation for events in Hyderabad.",
+    url: "https://catering-one-self.vercel.app/customise-plate",
+    siteName: "AASWADYA Caterers",
+    locale: "en_IN",
+    type: "website",
+  },
 };
 
 export default function CustomisePlatePage() {

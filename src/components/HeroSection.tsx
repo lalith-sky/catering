@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Utensils, CalendarCheck, ShieldCheck, Sparkles, MapPin, CheckCircle2 } from "lucide-react";
 import { MENU_PACKAGES } from "@/data/cateringData";
 
@@ -46,24 +47,32 @@ export default function HeroSection() {
             </p>
 
             <p className="text-base sm:text-lg text-[#32453B] leading-relaxed max-w-2xl mb-8">
-              Bringing families together with traditional flavours, fresh ingredients, and memorable food experiences. Handcrafted vegetarian delicacies cooked with devotion and served with authentic Telugu hospitality.
+              AASWADYA Caterers offers pure vegetarian catering services for weddings, family functions, celebrations and events in Hyderabad. Bringing families together with traditional flavours, fresh ingredients, and memorable food experiences. Handcrafted vegetarian delicacies cooked with devotion and served with authentic Telugu hospitality.
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-10">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto mb-10 flex-wrap">
               <button
                 type="button"
                 onClick={() => scrollToSection("menus")}
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#14482E] text-[#FAF7F0] font-semibold text-base shadow-md hover:bg-[#0D3522] hover:shadow-lg transition-all duration-200 group"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#14482E] text-[#FAF7F0] font-semibold text-base shadow-md hover:bg-[#0D3522] hover:shadow-lg transition-all duration-200 group"
               >
                 <Utensils className="w-4 h-4 text-gold-300 transition-transform group-hover:scale-110" />
-                <span>Explore Our Menus</span>
+                <span>Explore Menus</span>
               </button>
+
+              <Link
+                href="/customise-plate"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#B88E28] to-[#9C731C] text-white font-semibold text-base shadow-md hover:from-[#9C731C] hover:to-[#7A5618] transition-all duration-200 group"
+              >
+                <Sparkles className="w-4 h-4 text-gold-200 transition-transform group-hover:scale-110" />
+                <span>Customise Plate & Quote</span>
+              </Link>
 
               <button
                 type="button"
                 onClick={() => scrollToSection("booking-enquiry")}
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-white border-2 border-[#B88E28] text-[#8E6515] font-semibold text-base shadow-sm hover:bg-[#FCFAF6] hover:border-[#8E6515] hover:text-[#5A3E16] transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white border-2 border-[#B88E28] text-[#8E6515] font-semibold text-base shadow-sm hover:bg-[#FCFAF6] hover:border-[#8E6515] hover:text-[#5A3E16] transition-all duration-200"
               >
                 <CalendarCheck className="w-4 h-4 text-[#B88E28]" />
                 <span>Get a Quote</span>
